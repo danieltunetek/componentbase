@@ -1,54 +1,59 @@
 {
   "name": "componentbase",
-  "version": "0.1.0",
-  "private": false, 
-  "description": "A reusable React component library with theming.", 
-  "type": "module", 
-  "main": "./dist/componentbase.cjs.js", 
-  "module": "./dist/componentbase.esm.js", 
-  "types": "./dist/index.d.ts", 
-  "exports": { 
+  "version": "0.1.0", 
+  "private": false,
+  "description": "A reusable React component library with theming.",
+  "type": "module",
+
+  
+  "main": "./dist/your-component-base.cjs.js", 
+  "module": "./dist/your-component-base.esm.js", 
+
+  
+  "exports": {
     ".": {
-      "import": "./dist/componentbase.esm.js",
-      "require": "./dist/componentbase.cjs.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",        
+      "import": "./dist/your-component-base.esm.js", 
+      "require": "./dist/your-component-base.cjs.js" 
     },
-    "./dist/style.css": "./dist/style.css" 
+    
+    "./dist/componentbase.css": "./dist/componentbase.css"
   },
-  "files": [ 
+
+  "files": [
     "dist"
   ],
   "scripts": {
     "dev": "vite",
     "build": "tsc --emitDeclarationOnly && vite build",
     "preview": "vite preview",
-    "prepublishOnly": "npm run build" 
+    "prepublishOnly": "npm run build"
   },
-  "peerDependencies": { 
-    "react": "^18.0.0 || ^19.0.0", 
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
     "react-dom": "^18.0.0 || ^19.0.0"
   },
   "devDependencies": { 
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
-    "@testing-library/user-event": "^13.5.0", 
-    "@types/jest": "^27.5.2", 
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
     "@types/node": "^22.13.16",
-    "@types/react": "^19.0.12", 
-    "@types/react-dom": "^19.0.4", 
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
-    "typescript": "^5.8.2", 
-    "vite": "^6.2.4", 
-    "vite-plugin-dts": "^4.5.3" 
+    "typescript": "^5.8.2",
+    "vite": "^6.2.4",
+    "vite-plugin-dts": "^4.5.3"
   },
-  "keywords": [ 
+  "keywords": [
     "react",
     "components",
     "typescript",
     "theming",
     "ui-library"
   ],
-  "author": "Daniel <daniel@tunetek.no>", 
-  "license": "MIT" 
+  "author": "Daniel <daniel@tunetek.no>",
+  "license": "MIT"
 }
