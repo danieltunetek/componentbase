@@ -1,26 +1,27 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
+    "target": "ES2020", // <-- CHANGED: Modern target
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // ESNext includes newer features
+    "allowJs": true, // Keep if you mix JS/TS, otherwise false is stricter
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "ESNext", // Correct for Vite
+    "moduleResolution": "bundler", // <-- CHANGED: Recommended for Vite/TS5+
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "noEmit": true, // Correct: Vite handles emitting JS
+    "jsx": "react-jsx", // Correct
+
+    /* Library Build Settings */
+    "declaration": true, // <-- ADDED: Generate .d.ts files
+    "declarationMap": true, // <-- ADDED: Generate source maps for .d.ts
+    // "declarationDir": "dist/types", // Optional: vite-plugin-dts handles bundling
+    "sourceMap": true // <-- ADDED: Generate source maps for JS (Vite uses this)
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"], // Correct: Only compile/check files in src
+  "exclude": ["node_modules", "dist", "vite.config.ts", "src/main.tsx"] // Optional: Exclude dev entry from type checking if desired
 }
